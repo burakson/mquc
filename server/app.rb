@@ -10,7 +10,7 @@ require_relative 'routes/club.rb'
 class Mquc < Sinatra::Application
   configure do
     set :site_title, 'Mes que un club'
-    set :views, Proc.new { File.join(root, 'public') }
+    set :views, Proc.new { File.join(root, 'server/views') }
     set :haml, {:format => :html5, :escape_html => true}
 
     enable :logging

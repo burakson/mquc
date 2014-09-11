@@ -1,0 +1,27 @@
+{
+  "name": "mquc",
+  "version": "0.0.1",
+  "description": "Mes que un club",
+  "repository": {
+    "type": "git",
+    "url": "https://burakson@bitbucket.org/burakson/mquc.git"
+  },
+  "author": "Burak Son",
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "backbone.marionette": "^2.1.0",
+    "backbone.stickit": "^0.8.0",
+    "gulp": "^3.8.7",
+    "gulp-browserify": "~0.5.0",
+    "gulp-sass": "^0.7.3",
+    "gulp-uglify": "^1.0.1",
+    "jadeify": "^2.5.1",
+    "jquery": "~2.1.1",
+    "lodash": "^2.4.1",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp-watch": "^0.7.0"
+  }
+}

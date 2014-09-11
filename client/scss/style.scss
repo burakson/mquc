@@ -1,0 +1,87 @@
+@import "spinner.scss";
+// @import "spins/traditional/traditional.scss";
+
+$body-color : #706E6E;
+
+%HelveticaNeueLight {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #efefef;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  color: $body-color;
+}
+
+.hide {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  @extend %HelveticaNeueLight;
+}
+
+a {
+  color: $body-color;
+}
+
+#content {
+  margin: 2rem auto;
+  width: 35rem;
+  min-height: 20rem;
+  border: 1px #DADADA solid;
+  background-color: #fff;
+  border-radius: .3rem;
+  .logo-wrapper {
+    padding: 1rem 0;
+    margin-top: 0rem;
+    text-align: center;
+  }
+}
+
+#main-nav {
+  position     : relative;
+  border       : 1px #DADADA solid;
+  border-right : 0;
+  border-left  : 0;
+  .spinner {
+    margin     : 0;
+    position   : absolute;
+    width      : 3rem;
+    top        : .7rem;
+    right      : 0;
+    > div {
+      width: .6rem;
+      height: .6rem;
+      background-color: #ABABAB;
+    }
+  }
+  ul {
+    margin     : 0;
+    padding    : 0 .3rem;
+    text-align : center;
+    li {
+      display  : inline-block;
+      a {
+        display         : block;
+        padding         : .8rem;
+        min-height      : 1.2rem;
+        text-decoration : none;
+        text-transform  : uppercase;
+        @extend %HelveticaNeueLight;
+        &:hover, &.selected {
+          text-decoration : underline;
+        }
+      }
+    }
+  }
+}
+
+#main {
+  padding : 1.2rem;
+}

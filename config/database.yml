@@ -7,6 +7,5 @@ development:
 production:
   adapter: postgresql
   encoding: utf8
-  database: d87sodnbq16b9a
-  username: btzfurbhqtzzwi
-  password: "5432"
+  database: mquc
+  username: root

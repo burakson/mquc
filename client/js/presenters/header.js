@@ -4,7 +4,7 @@ var $           = require('jquery')
   , _           = require('underscore')
   , Backbone    = require('backbone')
   , Marionette  = require('backbone.marionette')
-  , Mcuq        = require('../mcuq')
+  , Mquc        = require('../mquc')
   , Template    = require('../templates/header.jade');
 
 module.exports = Backbone.Marionette.LayoutView.extend({
@@ -19,8 +19,8 @@ module.exports = Backbone.Marionette.LayoutView.extend({
   },
 
   initialize: function() {
-    Mcuq.vent.on('header:toggleSpinner', _.bind( this.toggleSpinner, this));
-    Mcuq.Router.on('route', _.bind( this.updateRoute, this));
+    Mquc.vent.on('header:toggleSpinner', _.bind( this.toggleSpinner, this));
+    Mquc.Router.on('route', _.bind( this.updateRoute, this));
   },
 
   onRender: function() {

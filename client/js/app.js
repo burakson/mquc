@@ -6,12 +6,12 @@ var $          = require('jquery')
     Backbone.$ = $;
 
 var Marionette = require('backbone.marionette')
-  , Mcuq       = require('./mcuq')
+  , Mquc       = require('./mquc')
   , Router     = require('./router')
   , Header     = require('./presenters/header');
 
 
-Mcuq.addInitializer(function (options){
+Mquc.addInitializer(function (options){
 
   this.addRegions({
     header     : '#header',
@@ -25,5 +25,5 @@ Mcuq.addInitializer(function (options){
 
 });
 
-Mcuq.Router = new Router();
-Mcuq.start();
+Mquc.Router = new Router();
+Mquc.start();

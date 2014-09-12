@@ -4,7 +4,7 @@ var Marionette = require('backbone.marionette')
   , Template   = require('../templates/players.jade')
   , PlayerTemplate = require('../templates/player.jade')
   , Player     = Marionette.ItemView.extend({ template: PlayerTemplate})
-  , Mcuq       = require('../mcuq');
+  , Mquc       = require('../mquc');
 
 module.exports = Marionette.CompositeView.extend({
 
@@ -21,7 +21,7 @@ module.exports = Marionette.CompositeView.extend({
   initialize: function() {},
 
   onRender: function() {
-    Mcuq.vent.trigger('header:toggleSpinner', false);
+    Mquc.vent.trigger('header:toggleSpinner', false);
   }
 
 });

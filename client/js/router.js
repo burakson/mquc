@@ -3,7 +3,7 @@
 var $          = require('jquery')
   , Backbone   = require('backbone')
   , Marionette = require('backbone.marionette')
-  , Mcuq       = require('./mcuq')
+  , Mquc       = require('./mquc')
   , Home       = require('./presenters/home')
   , Players    = require('./presenters/players')
   // , Player     = require('./presenters/player')
@@ -25,7 +25,7 @@ module.exports = Backbone.Marionette.AppRouter.extend({
     initialize: function() {},
 
     beforeRoute: function() {
-      Mcuq.vent.trigger('header:toggleSpinner', true);
+      Mquc.vent.trigger('header:toggleSpinner', true);
     },
 
     home: function () {
@@ -34,7 +34,7 @@ module.exports = Backbone.Marionette.AppRouter.extend({
       var collection = new NewsCollection();
 
       $.when( collection.fetch() ).done( function( ) {
-        Mcuq.main.show( new Home({ collection : collection }) );
+        Mquc.main.show( new Home({ collection : collection }) );
       });
     },
 
@@ -44,7 +44,7 @@ module.exports = Backbone.Marionette.AppRouter.extend({
 
       collection.fetch({
         success: function() {
-          Mcuq.main.show( new Players({ collection : collection }) );
+          Mquc.main.show( new Players({ collection : collection }) );
         }
       });
     },
@@ -59,7 +59,7 @@ module.exports = Backbone.Marionette.AppRouter.extend({
       var model = new ClubModel();
       model.fetch({
         success: function() {
-          Mcuq.main.show(new Club({
+          Mquc.main.show(new Club({
             model: model
           }));
         }

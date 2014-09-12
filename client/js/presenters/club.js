@@ -3,7 +3,7 @@
 var Backbone   = require('backbone')
   , Marionette = require('backbone.marionette')
   , Template   = require('../templates/club.jade')
-  , Mcuq       = require('../mcuq');
+  , Mquc       = require('../mquc');
 
 module.exports = Backbone.Marionette.LayoutView.extend({
 
@@ -13,7 +13,7 @@ module.exports = Backbone.Marionette.LayoutView.extend({
   },
 
   onRender: function() {
-    Mcuq.vent.trigger('header:toggleSpinner', false);
+    Mquc.vent.trigger('header:toggleSpinner', false);
   }
 
 });

@@ -1,7 +1,8 @@
 @import "spinner.scss";
-// @import "spins/traditional/traditional.scss";
 
-$body-color : #706E6E;
+$body-color   : #706E6E;
+$color-red    : #982D4B;
+$light-gray   : #DADADA;
 
 %HelveticaNeueLight {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
@@ -21,20 +22,24 @@ body {
   display: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+h1, h2, h3 {
+  margin: 0 0 1rem 0;
   @extend %HelveticaNeueLight;
 }
 
 a {
   color: $body-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration : underline;
+  }
 }
 
 #content {
   margin: 2rem auto;
   width: 35rem;
   min-height: 20rem;
-  border: 1px #DADADA solid;
+  border: 1px $light-gray solid;
   background-color: #fff;
   border-radius: .3rem;
   .logo-wrapper {
@@ -46,7 +51,7 @@ a {
 
 #main-nav {
   position     : relative;
-  border       : 1px #DADADA solid;
+  border       : 1px $light-gray solid;
   border-right : 0;
   border-left  : 0;
   .spinner {
@@ -58,7 +63,7 @@ a {
     > div {
       width: .6rem;
       height: .6rem;
-      background-color: #ABABAB;
+      background-color: $light-gray;
     }
   }
   ul {
@@ -83,5 +88,70 @@ a {
 }
 
 #main {
-  padding : 1.2rem;
+  padding : 2rem 1.2rem;
+}
+
+// NEWS
+.news {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li a {
+      display: block;
+      padding: .6rem 0;
+      border-bottom: 1px $light-gray solid;
+    }
+  }
+  .note {
+    margin-top: 1.5rem;
+    display: block;
+    font-size: .8em;
+    color: #ccc;
+    text-align: right;
+    font-style: italic;
+  }
+}
+
+// PLAYERS
+.players {
+  .player-stage {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .playerlist {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+    a {
+      display: block;
+      padding: .5rem 0;
+      border-bottom: 1px $light-gray solid;
+    }
+  }
+}
+
+// CLUB
+.club-info {
+  .item-container {
+    margin-bottom: .6rem;
+    padding-bottom: .6rem;
+    border-bottom: 1px $light-gray solid;
+    .title {
+      color: $color-red;
+      display: inline-block;
+      width: 40%;
+    }
+    .value {
+      display: inline-block;
+    }
+  }
+  h3.history {
+    color: $color-red;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
 }

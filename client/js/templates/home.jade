@@ -1,0 +1,11 @@
+.news
+  h1 News
+
+  ul
+    for item in items
+      li
+        a(href="#{item.link}", target="_blank")
+          = item.title
+
+  .note
+    = '* News are provided by FCBarcelona.com'

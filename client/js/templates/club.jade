@@ -1,0 +1,33 @@
+.club-info
+  .item-container
+    .title Title
+    .value= title
+
+  .item-container
+    .title Founded in
+    .value= founded
+
+  .item-container
+    .title Stadium
+    .value= stadium
+
+  .item-container
+    .title Stadium Capacity
+    .value= stadium_capacity
+
+  .item-container
+    .title Coach
+    .value= coach
+
+  .item-container
+    .title Rival
+    .value= rival
+
+  .item-container
+    .title Official Website
+    .value
+      a(href="#{website}", target="_blank")
+        = website
+
+  h3.history History
+  = history

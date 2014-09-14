@@ -1,9 +1,16 @@
 'use strict';
 
-var Backbone  = require('backbone');
+var Backbone  = require('backbone')
+  , Model     = require('../models/player');
 
 module.exports = Backbone.Collection.extend({
 
-  url: '/api/players'
+  model: Model,
+
+  url: '/api/players',
+
+  comparator: function(model) {
+    return model.get('name');
+  }
 
 });

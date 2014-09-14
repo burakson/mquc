@@ -1,26 +1,41 @@
 'use strict';
 
-var Marionette = require('backbone.marionette')
-  , Template   = require('../templates/players.jade')
-  , PlayerTemplate = require('../templates/player.jade')
-  , Player     = Marionette.ItemView.extend({ template: PlayerTemplate})
-  , Mquc       = require('../mquc');
+var _           = require('underscore')
+  , Marionette  = require('backbone.marionette')
+  , Mquc        = require('../mquc')
+  , Template    = require('../templates/players.jade')
+  , Playerlist  = require('./playerlist')
+  , PlayerStage = require('./playerstage');
 
-module.exports = Marionette.CompositeView.extend({
+module.exports = Marionette.LayoutView.extend({
 
-  childView: Player,
-
-  childViewContainer: '.playerlist',
-
-  regions : {
-    'stage' : '.player-stage'
+  regions: {
+    stage : '.playerstage',
+    list  : '.playerlist'
   },
 
   template: Template,
 
-  initialize: function() {},
+  initialize: function() {
+    var player;
+
+    if ( this.options.playerId ) {
+      player = this.collection.get(this.options.playerId);
+    }
+
+    this.PlayerlistView = new Playerlist({
+      collection: this.collection
+    });
+
+    this.PlayerStage = new PlayerStage({
+      model: player
+    });
+  },
 
   onRender: function() {
+    this.stage.show(this.PlayerStage);
+    this.list.show(this.PlayerlistView);
+
     Mquc.vent.trigger('header:toggleSpinner', false);
   }
 

@@ -4,7 +4,7 @@ var Backbone  = require('backbone');
 
 module.exports = Backbone.Collection.extend({
 
-  url: 'test/http://www.fcbarcelona.com/list/articles.rss',
+  url: 'http://www.fcbarcelona.com/list/articles.rss',
 
   parse: function(response) {
     if ( response.responseStatus === 200 && response.responseData ) {

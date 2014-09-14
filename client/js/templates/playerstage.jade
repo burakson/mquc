@@ -1,0 +1,47 @@
+.stage-empty
+  = "Pick a player to see the profile"
+
+if player
+  .details-wrapper
+    if !player.is_god
+      .action-buttons
+        a(href="#").btn.btn-edit Edit Player
+        a(href="#").btn.btn-delete Delete Player
+
+    .player-picture
+      img(src="images/players/#{player.picture}")
+
+    form.player-details
+      .item-container
+        .title Name
+        .value.fixed= player.name
+        .value.editable.hide
+          input.input-name(type="text", value="#{player.name}")
+
+      .item-container
+        .title Fullname
+        .value= player.fullname
+        .value.editable.hide
+          input.input-fullname(type="text", value="#{player.fullname}")
+
+      .item-container
+        .title Age
+        .value= player.age
+        .value.editable.hide
+          input.input-age(type="text", value="#{player.age}")
+
+      .item-container
+        .title Jersey
+        .value= player.jersey
+        .value.editable.hide
+          input.input-jersey(type="text", value="#{player.jersey}")
+      .item-container
+        .title Url
+        a(href="#{player.url}", target="_blank")
+          .value= player.url
+        .value.editable.hide
+          input.input-url(type="text", value="#{player.url}")
+
+      if !player.is_god
+        button.btn.btn-save(disabled="disabled") Save Changes
+

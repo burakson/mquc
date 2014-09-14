@@ -6,7 +6,6 @@ var $          = require('jquery')
   , Mquc       = require('./mquc')
   , Home       = require('./presenters/home')
   , Players    = require('./presenters/players')
-  // , Player     = require('./presenters/player')
   , Club       = require('./presenters/club')
   , ClubModel  = require('./models/club')
   , PlayersCollection = require('./collections/players')
@@ -51,6 +50,25 @@ module.exports = Backbone.Marionette.AppRouter.extend({
 
     player: function(id) {
       this.beforeRoute();
+
+      // Fire the event only if the route has changed through playerlist
+      if ( typeof Mquc.main.currentView !== 'undefined' && Mquc.main.currentView.PlayerStage) {
+        var player = Mquc.main.currentView.collection.get(id);
+        Mquc.main.currentView.PlayerStage.model = player;
+        Mquc.main.currentView.PlayerStage.render()
+        return;
+      }
+
+      var collection = new PlayersCollection();
+
+      collection.fetch({
+        success: function() {
+          Mquc.main.show( new Players({
+            collection : collection,
+            playerId   : id
+          }));
+        }
+      });
     },
 
     club: function (id) {

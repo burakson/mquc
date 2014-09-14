@@ -5,21 +5,21 @@ $color-red    : #982D4B;
 $light-gray   : #DADADA;
 
 %HelveticaNeueLight {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 300;
+  font-family : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight : 300;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #efefef;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 16px;
-  color: $body-color;
+  margin           : 0;
+  padding          : 0;
+  background-color : #efefef;
+  font-family      : "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size        : 16px;
+  color            : $body-color;
 }
 
 .hide {
-  display: none;
+  display : none !important;
 }
 
 h1, h2, h3 {
@@ -28,24 +28,24 @@ h1, h2, h3 {
 }
 
 a {
-  color: $body-color;
-  text-decoration: none;
+  color             : $body-color;
+  text-decoration   : none;
   &:hover {
     text-decoration : underline;
   }
 }
 
 #content {
-  margin: 2rem auto;
-  width: 35rem;
-  min-height: 20rem;
-  border: 1px $light-gray solid;
-  background-color: #fff;
-  border-radius: .3rem;
+  margin           : 2rem auto;
+  width            : 35rem;
+  min-height       : 20rem;
+  border           : 1px $light-gray solid;
+  background-color : #fff;
+  border-radius    : .3rem;
   .logo-wrapper {
-    padding: 1rem 0;
-    margin-top: 0rem;
-    text-align: center;
+    padding    : 1rem 0;
+    margin-top : 0rem;
+    text-align : center;
   }
 }
 
@@ -91,67 +91,119 @@ a {
   padding : 2rem 1.2rem;
 }
 
+.item-container {
+  margin-bottom  : .6rem;
+  padding-bottom : .6rem;
+  border-bottom  : 1px $light-gray solid;
+  .title {
+    color        : $color-red;
+    display      : inline-block;
+    width        : 40%;
+  }
+  .value {
+    display      : inline-block;
+  }
+}
+
 // NEWS
 .news {
   ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    padding    : 0;
+    margin     : 0;
+    list-style : none;
     li a {
-      display: block;
-      padding: .6rem 0;
-      border-bottom: 1px $light-gray solid;
+      display       : block;
+      padding       : .6rem 0;
+      border-bottom : 1px $light-gray solid;
     }
   }
   .note {
-    margin-top: 1.5rem;
-    display: block;
-    font-size: .8em;
-    color: #ccc;
-    text-align: right;
-    font-style: italic;
+    margin-top : 1.5rem;
+    display    : block;
+    font-size  : .8em;
+    color      : #ccc;
+    text-align : right;
+    font-style : italic;
   }
 }
 
 // PLAYERS
-.players {
-  .player-stage {
-    margin-bottom: 2rem;
-    text-align: center;
+.players .playerstage {
+  margin-bottom  : 2rem;
+  .stage-empty {
+    color: $color-red;
+    text-align   : center;
+    font-size    : 1.2em;
+    @extend %HelveticaNeueLight;
   }
-  .playerlist {
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
-    column-count: 2;
-    column-gap: 20px;
-    a {
-      display: block;
-      padding: .5rem 0;
-      border-bottom: 1px $light-gray solid;
+  .player-picture {
+    display      : inline-block;
+    margin-right : 1rem;
+    width        : 100px;
+    height       : 130px;
+    border       : 1px #000 solid;
+  }
+  .player-details {
+    width          : 75%;
+    display        : inline-block;
+    vertical-align : top;
+    .player-name {
+      margin       : .5rem 0;
     }
+  }
+}
+
+.players .playerstage .action-buttons {
+  display     : block;
+  text-align  : right;
+  margin-bottom: 1.5rem;
+  .btn {
+    margin         : 0 .3rem;
+    padding        : 6px 12px;
+    display        : inline-block;
+    line-height    : normal;
+    white-space    : nowrap;
+    vertical-align : baseline;
+    text-align     : center;
+    font-size      : 0.8em;
+    border-radius  : .3rem;
+    &.btn-edit {
+      color            : #fff;
+      background-color : #428bca;
+      border-color     : #357ebd;
+    }
+    &.btn-delete {
+      color            : #fff;
+      background-color : #d9534f;
+      border-color     : #d43f3a;
+    }
+  }
+}
+
+.players .playerlist {
+  ul {
+    margin               : 0;
+    padding              : 0;
+    list-style           : none;
+    -moz-column-count    : 2;
+    -moz-column-gap      : 20px;
+    -webkit-column-count : 2;
+    -webkit-column-gap   : 20px;
+    column-count         : 2;
+    column-gap           : 20px;
+  }
+  a {
+    display              : block;
+    padding              : .5rem 0;
+    border-bottom        : 1px $light-gray solid;
   }
 }
 
 // CLUB
 .club-info {
-  .item-container {
-    margin-bottom: .6rem;
-    padding-bottom: .6rem;
-    border-bottom: 1px $light-gray solid;
-    .title {
-      color: $color-red;
-      display: inline-block;
-      width: 40%;
-    }
-    .value {
-      display: inline-block;
-    }
-  }
   h3.history {
-    color: $color-red;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    color          : $color-red;
+    margin-top     : 2rem;
+    margin-bottom  : 1rem;
   }
 }

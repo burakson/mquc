@@ -12,10 +12,11 @@ module.exports = Backbone.Marionette.LayoutView.extend({
   template : Template,
 
   ui : {
-    'home'    : '.nav-home',
-    'players' : '.nav-players',
-    'club'    : '.nav-club',
-    'spinner' : '.spinner'
+    home    : '.nav-home',
+    players : '.nav-players',
+    player  : '.nav-players',
+    club    : '.nav-club',
+    spinner : '.spinner'
   },
 
   initialize: function() {

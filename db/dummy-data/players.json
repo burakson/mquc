@@ -1,38 +1,91 @@
-[  
-  "M. ter Stegen",
-  "C. Bravo",
-  "Jordi Masip",
-  "Martín Montoya",
-  "Piqué",
-  "Bartra",
-  "Jordi Alba",
-  "Adriano Correia",
-  "Dani Alves",
-  "F. Bagnack",
-  "Lucas Gafarot",
-  "Álex Grimaldo",
-  "Edgar Ié",
-  "J. Mathieu",
-  "Douglas Pereira",
-  "T. Vermaelen",
-  "I. Rakitić",
-  "Busquets",
-  "Xavi",
-  "Iniesta",
-  "J. Mascherano",
-  "Sergi Roberto",
-  "Rafinha",
-  "D. Babunski",
-  "Patric",
-  "A. Halilović",
-  "Joan Román",
-  "Sergi Samper",
-  "Pedro",
-  "L. Suárez",
-  "L. Messi",
-  "Neymar",
-  "J. Dongou",
-  "Munir",
-  "Sandro Ramírez",
-  "Adama Traoré"
+[
+  {
+    "name": "M. ter Stegen",
+    "picture": "ter_stegen.jpg"
+  },
+  {
+    "name": "C. Bravo",
+    "picture": "bravo.jpg"
+  },
+  {
+    "name": "Jordi Masip",
+    "picture": "masip.jpg"
+  },
+  {
+    "name": "Martín Montoya",
+    "picture": "montoya.jpg"
+  },
+  {
+    "name": "Piqué",
+    "picture": "pique.jpg"
+  },
+  {
+    "name": "Bartra",
+    "picture": "bartra.jpg"
+  },
+  {
+    "name": "Jordi Alba",
+    "picture": "alba.jpg"
+  },
+  {
+    "name": "Dani Alves",
+    "picture": "alves.jpg"
+  },
+  {
+    "name": "J. Mathieu",
+    "picture": "mathieu.jpg"
+  },
+  {
+    "name": "Douglas Pereira",
+    "picture": "douglas.jpg"
+  },
+  {
+    "name": "T. Vermaelen",
+    "picture": "vermaelen.jpg"
+  },
+  {
+    "name": "I. Rakitić",
+    "picture": "rakitic.jpg"
+  },
+  {
+    "name": "Busquets",
+    "picture": "busquets.jpg"
+  },
+  {
+    "name": "Xavi",
+    "picture": "xavi.jpg"
+  },
+  {
+    "name": "Iniesta",
+    "picture": "iniesta.jpg"
+  },
+  {
+    "name": "J. Mascherano",
+    "picture": "mascherano.jpg"
+  },
+  {
+    "name": "Sergi Roberto",
+    "picture": "roberto.jpg"
+  },
+  {
+    "name": "Rafinha",
+    "picture": "rafinha.jpg"
+  },
+  {
+    "name": "Pedro",
+    "picture": "pedro.jpg"
+  },
+  {
+    "name": "L. Suárez",
+    "picture": "suarez.jpg"
+  },
+  {
+    "name": "L. Messi",
+    "picture": "messi.jpg",
+    "is_god": true
+  },
+  {
+    "name": "Neymar",
+    "picture": "neymar.jpg"
+  }
 ]

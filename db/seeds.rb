@@ -1,11 +1,6 @@
 if Player.count == 0
   players_json = JSON.parse(File.read("#{File.dirname(__FILE__)}/dummy-data/players.json"))
-  players_json.each do |name|
-    Player.create!(
-      :name   => name,
-      :is_god => name == 'L. Messi' ? 1 : 0
-    )
-  end
+  Player.create!(players_json)
   puts "#{Player.count} players have been added."
 end
 

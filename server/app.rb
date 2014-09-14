@@ -16,8 +16,4 @@ class Mquc < Sinatra::Application
     enable :logging
     enable :method_override
   end
-
-  before do
-    # cache_control :public, :must_revalidate, :max_age => 60
-  end
 end

@@ -1,6 +1,5 @@
 def api_error(http_code=400, message='Method not allowed')
   status http_code
-
   {
     'error' => {
       'code'    => http_code,
@@ -9,3 +8,11 @@ def api_error(http_code=400, message='Method not allowed')
   }.to_json()
 end
 
+def api_success(message='Request completed')
+  {
+    'response' => {
+      'code'    => 200,
+      'message' => message
+    }
+  }.to_json()
+end

@@ -12,19 +12,18 @@ end
 get '/api/players/?:id?' do
   player = Player.find_by_id(params[:id])
   return api_error(400, 'Player not found.') unless player
+
   player.to_json({ except: [:created_at, :updated_at] })
 end
 
-post '/api/players/?:id/?:action?' do
-  action = params[:action]
-  api_error unless action == 'create'
+post '/api/players/?:id/?' do
 end
 
-put '/api/players/?:id/?:action?' do
-  action = params[:action]
-  if action == 'delete'
-    puts 'delete'
-  elsif action == 'edit'
-    puts 'edit'
-  end
+delete '/api/players/?:id?' do
+  player = Player.find_by_id(params[:id])
+  return api_error(400, 'Player not found.') unless player
+
+  player.destroy()
+  message = 'User has been deleted successfully.'
+  api_success(message)
 end

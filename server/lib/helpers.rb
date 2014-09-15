@@ -16,3 +16,7 @@ def api_success(message='Request completed')
     }
   }.to_json()
 end
+
+def get_request_payload
+  JSON.parse request.body.read
+end

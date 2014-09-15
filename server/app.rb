@@ -12,8 +12,5 @@ class Mquc < Sinatra::Application
     set :site_title, 'Mes que un club'
     set :views, Proc.new { File.join(root, 'server/views') }
     set :haml, {:format => :html5, :escape_html => true}
-
-    enable :logging
-    enable :method_override
   end
 end

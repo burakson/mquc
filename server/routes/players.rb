@@ -16,7 +16,13 @@ get '/api/players/?:id?' do
   player.to_json({ except: [:created_at, :updated_at] })
 end
 
-post '/api/players/?:id/?' do
+put '/api/players/?:id/?' do
+  player = Player.find_by_id(params[:id])
+  return api_error(400, 'Player not found.') unless player
+
+  payload = get_request_payload()
+  player.update_attributes(payload)
+  player.to_json({ except: [:created_at, :updated_at] })
 end
 
 delete '/api/players/?:id?' do

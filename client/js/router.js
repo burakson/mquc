@@ -32,7 +32,7 @@ module.exports = Backbone.Marionette.AppRouter.extend({
 
       var collection = new NewsCollection();
 
-      $.when( collection.fetch() ).done( function( ) {
+      $.when( collection.fetch() ).always(function() {
         Mquc.main.show( new Home({ collection : collection }) );
       });
     },
@@ -41,10 +41,8 @@ module.exports = Backbone.Marionette.AppRouter.extend({
       this.beforeRoute();
       var collection = new PlayersCollection();
 
-      collection.fetch({
-        success: function() {
-          Mquc.main.show( new Players({ collection : collection }) );
-        }
+      $.when( collection.fetch() ).always(function() {
+        Mquc.main.show( new Players({ collection : collection }) );
       });
     },
 
@@ -61,13 +59,11 @@ module.exports = Backbone.Marionette.AppRouter.extend({
 
       var collection = new PlayersCollection();
 
-      collection.fetch({
-        success: function() {
+      $.when( collection.fetch() ).always(function() {
           Mquc.main.show( new Players({
             collection : collection,
             playerId   : id
           }));
-        }
       });
     },
 
@@ -75,12 +71,10 @@ module.exports = Backbone.Marionette.AppRouter.extend({
       this.beforeRoute();
 
       var model = new ClubModel();
-      model.fetch({
-        success: function() {
-          Mquc.main.show(new Club({
-            model: model
-          }));
-        }
+      $.when( model.fetch() ).always(function() {
+        Mquc.main.show(new Club({
+          model: model
+        }));
       });
 
     },

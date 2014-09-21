@@ -1,47 +1,42 @@
-.stage-empty
-  = "Pick a player to see the profile"
-
 if player
   .details-wrapper
-    if !player.is_god
+    if player.id
       .action-buttons
-        a(href="#").btn.btn-edit Edit Player
-        a(href="#").btn.btn-delete Delete Player
+        a(href="#").btn.btn-add Add Player
+        if !player.is_god
+          a(href="#").btn.btn-edit Edit Player
+          a(href="#").btn.btn-delete Delete Player
 
-    .player-picture
-      img(src="images/players/#{player.picture}")
+    if player.picture && player.id
+      .player-picture
+        img(src="images/players/#{player.picture}")
 
-    form.player-details
+    form.player-details(action="#")
+      .item-container.form-error.hide
       .item-container
         .title Name
-        .value.fixed= player.name
-        .value.editable.hide
-          input.input-name(type="text", value="#{player.name}")
+        .value
+          input.input-name.readonly(type="text", value="#{player.name}", readonly="readonly")
 
       .item-container
         .title Fullname
-        .value= player.fullname
-        .value.editable.hide
-          input.input-fullname(type="text", value="#{player.fullname}")
+        .value
+          input.input-fullname.readonly(type="text", value="#{player.fullname}", readonly="readonly")
 
       .item-container
         .title Age
-        .value= player.age
-        .value.editable.hide
-          input.input-age(type="text", value="#{player.age}")
+        .value
+          input.input-age.readonly(type="number", value="#{player.age}", readonly="readonly")
 
       .item-container
         .title Jersey
-        .value= player.jersey
-        .value.editable.hide
-          input.input-jersey(type="text", value="#{player.jersey}")
+        .value
+          input.input-jersey.readonly(type="number", value="#{player.jersey}", readonly="readonly")
       .item-container
         .title Url
-        a(href="#{player.url}", target="_blank")
-          .value= player.url
-        .value.editable.hide
-          input.input-url(type="text", value="#{player.url}")
+        .value
+          input.input-url.readonly(type="url", value="#{player.url}", readonly="readonly")
 
       if !player.is_god
-        button.btn.btn-save(disabled="disabled") Save Changes
+        button.btn.btn-save.hide(disabled="disabled") Save Changes
 

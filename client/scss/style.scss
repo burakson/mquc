@@ -96,12 +96,15 @@ a {
   padding-bottom : .6rem;
   border-bottom  : 1px $light-gray solid;
   .title {
-    color        : $color-red;
     display      : inline-block;
     width        : 40%;
+    @extend %HelveticaNeueLight;
   }
   .value {
     display      : inline-block;
+  }
+  &.form-error {
+    color            : #a94442;
   }
 }
 
@@ -131,7 +134,6 @@ a {
 .players .playerstage {
   margin-bottom  : 2rem;
   .stage-empty {
-    color: $color-red;
     text-align   : center;
     font-size    : 1.2em;
     @extend %HelveticaNeueLight;
@@ -144,12 +146,16 @@ a {
     border       : 1px #000 solid;
   }
   .player-details {
-    width          : 75%;
+    width          : 100%;
+    min-height     : 250px;
     display        : inline-block;
     vertical-align : top;
     .player-name {
       margin       : .5rem 0;
     }
+  }
+  .player-picture + .player-details {
+    width          : 75%;
   }
 }
 
@@ -157,25 +163,40 @@ a {
   display     : block;
   text-align  : right;
   margin-bottom: 1.5rem;
-  .btn {
-    margin         : 0 .3rem;
-    padding        : 6px 12px;
-    display        : inline-block;
-    line-height    : normal;
-    white-space    : nowrap;
-    vertical-align : baseline;
-    text-align     : center;
-    font-size      : 0.8em;
-    border-radius  : .3rem;
-    &.btn-edit {
-      color            : #fff;
-      background-color : #428bca;
-      border-color     : #357ebd;
+}
+
+.btn {
+  margin         : 0 .3rem;
+  padding        : 6px 12px;
+  display        : inline-block;
+  line-height    : normal;
+  white-space    : nowrap;
+  vertical-align : baseline;
+  text-align     : center;
+  font-size      : 0.8em;
+  border-radius  : .3rem;
+  border         : 1px $light-gray solid;
+  background-color : #efefef;
+  @extend %HelveticaNeueLight;
+  &:hover {
+    background-color: #DEDEDE;
+    text-decoration: none;
+  }
+  &.btn-save {
+    margin-left      : 40%;
+    color            : #fff;
+    background-color : #428bca;
+    border-color     : #357ebd;
+    cursor           : pointer;
+    &:hover {
+      background-color : #2E5A81;
     }
-    &.btn-delete {
-      color            : #fff;
-      background-color : #d9534f;
-      border-color     : #d43f3a;
+    &:disabled {
+      cursor         : inherit;
+      opacity        : .5;
+      &:hover {
+        background-color : #428bca;
+      }
     }
   }
 }
@@ -197,6 +218,11 @@ a {
     padding              : .5rem 0;
     border-bottom        : 1px $light-gray solid;
   }
+}
+
+input.readonly {
+  padding: 3px;
+  border: 0;
 }
 
 // CLUB

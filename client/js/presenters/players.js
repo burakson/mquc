@@ -1,9 +1,11 @@
 'use strict';
 
 var _           = require('underscore')
+  , Backbone    = require('backbone')
   , Marionette  = require('backbone.marionette')
   , Mquc        = require('../mquc')
   , Template    = require('../templates/players.jade')
+  , PlayerModel = require('../models/player')
   , Playerlist  = require('./playerlist')
   , PlayerStage = require('./playerstage');
 

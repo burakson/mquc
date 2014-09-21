@@ -16,12 +16,18 @@ get '/api/players/?:id?' do
   player.to_json({ except: [:created_at, :updated_at] })
 end
 
-put '/api/players/?:id/?' do
-  player = Player.find_by_id(params[:id])
-  return api_error(400, 'Player not found.') unless player
-
+put '/api/players/?' do
   payload = get_request_payload()
-  player.update_attributes(payload)
+  payload = payload.slice('id', 'name', 'fullname', 'age', 'jersey_number', 'url')
+
+  if payload['id'] != ''
+    player = Player.find_by_id(payload['id'])
+    return api_error(400, 'Player not found.') unless player
+    player.update_attributes(payload)
+  else
+    player = Player.create(payload)
+  end
+
   player.to_json({ except: [:created_at, :updated_at] })
 end
 

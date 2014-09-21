@@ -18,5 +18,5 @@ def api_success(message='Request completed')
 end
 
 def get_request_payload
-  JSON.parse request.body.read
+  payload = JSON.parse request.body.read
 end
